@@ -186,7 +186,7 @@ func Run(ctx context.Context, config string) error {
 		},
 	}
 
-	defer http_transport.CloseIdleConnections()
+	defer client.CloseIdleConnections()
 
 	resp, err := client.Do(req)
 	if err != nil {
